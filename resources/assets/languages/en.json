@@ -1,0 +1,39 @@
+{
+  "index": {
+    "PAGETITLE": "Saituna Consulting Landing Page",
+    "NAME": "Saituna Consulting",
+    "SAMPLEDESC": "Sample Desc",
+    "FREE_CALL": "Free Call",
+    "OUR_SERVICES": "Our Services",
+    "OTHERS_SERVICES": "Others Services",
+    "NAME_SERVICE1": "Funding",
+    "NAME_SERVICE2": "Business Start",
+    "NAME_SERVICE3": "Coaching",
+    "NAME_SERVICE4": "Business Plan",
+    "NAME_SERVICE5": "Accounting",
+    "YOUR_ADVENTAGES": "Your Advantages",
+    "TITLE_ADVENTAGE1": "Time for your questions",
+    "TITLE_ADVENTAGE2": "All legal issues",
+    "TITLE_ADVENTAGE3": "Clear answers from the lawyer",
+    "TITLE_ADVENTAGE4": "Direct communication without appointment in the office",
+    "DESC_ADVENTAGE1": "During a 30-minute telephone call, you can discuss your questions about your establishment with your lawyer. For the telephone conversation the lawyer arranges an individual appointment with you.",
+    "DESC_ADVENTAGE2": "Your lawyer will answer questions on all legal issues. For a tax or tax consultancy, which is not included, he recommends a tax consultant on request.",
+    "DESC_ADVENTAGE3": "You can ask individual questions and get binding answers. Your lawyer will advise you on your concerns and give you clear recommendations for your job",
+    "DESC_ADVENTAGE4": "You can communicate with your lawyer via our platform, by e-mail or by telephone. You do not have to make an on-site visit to a law firm.",
+    "CONTACT": {
+      "ADDRESS": "Ruhrallee 185",
+      "STREET": "45136 Essen"
+    },
+    "CAROUSEL" :{
+        "TITLE_SLIDE1": "",
+        "TITLE_SLIDE2": "",
+        "TITLE_SLIDE3": "",
+        "DESC_SLIDE1": "",
+        "DESC_SLIDE2": "",
+        "DESC_SLIDE3": "",
+        "PREV": "Previous",
+        "NEXT": "Next"
+    },
+    "COPYRIGHT": "Copyright"
+  }
+}

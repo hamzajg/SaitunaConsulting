@@ -1,0 +1,60 @@
+
+<style>
+.navbar {
+      border-bottom: 1px solid #007bff;
+}
+.navbar-light .navbar-toggler {
+  border-color: transparent;
+}
+</style>
+<!-- Navigation -->
+<nav id="top" class="navbar fixed-top navbar-toggleable-sm navbar-inverse bg-inverse navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/" style="margin-top: -15px; margin-bottom: -15px;"><img src="img/Saituna_Logo_Landscape.png" width="134px"/></a>
+  <div class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </div>
+    <div class="navbar-collapse collapse">
+
+    </div>
+    <span class="nav-link col-md-2 text-center" style="margin-top: -15px; margin-bottom: -15px;">
+      <small><table align="center"><tbody><tr><td rowspan="2"><i class="fa fa-phone fa-3x"></i></td><td class="text-left"><%'index.FREE_CALL' | translate%></td></tr><tr><td class="text-left">0800 / 989 8080</td></tr></tbody></table>
+      </small></span>
+    <div class="navbar-collapse collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#services" ng-if="!(currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting'))"><%'index.OUR_SERVICES' | translate%></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#adventages" ng-if="!(currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting'))"><%'index.YOUR_ADVENTAGES' | translate%></a></h4>
+        </li>
+        <li class="nav-item dropdown" ng-if="currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting')">
+          <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Others
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/funding"><%'index.NAME_SERVICE1' | translate%></a>
+            <a class="dropdown-item" href="/business_start"><%'index.NAME_SERVICE2' | translate%></a>
+            <a class="dropdown-item" href="/coaching"><%'index.NAME_SERVICE3' | translate%></a>
+            <a class="dropdown-item" href="/business_plan"><%'index.NAME_SERVICE4' | translate%></a>
+            <a class="dropdown-item" href="/accounting"><%'index.NAME_SERVICE5' | translate%></a>
+          </div>
+        </li>
+        <li class="nav-item" ng-if="currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting')">
+          <a class="nav-link" href="#">Forderchech</a>
+        </li>
+        <li class="nav-item" ng-if="currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting')">
+          <a class="nav-link" href="#">Sprache</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width: fit-content">
+            <img ng-src="img/flags/<%currentLanguage == 'en' ? 'United-Kingdom' : currentLanguage == 'de' ? 'Germany' : 'Saudi-Arabia'%>.png" class="img-thumbnail icon-small" alt="" width="30px" height="50%"/>
+          </a>
+          <div class="dropdown-menu" style="min-width: unset" aria-labelledby="navbarDropdownMenuLink" style="max-width: fit-content">
+            <a class="dropdown-item" ng-class="{'active': currentLanguage == 'de'}" href ng-click="changeLanguage('de')" style="max-width: fit-content"><img src="img/flags/Germany.png" alt="" width="20px" height="50%"/></a>
+            <a class="dropdown-item" ng-class="{'active': currentLanguage == 'en'}" href ng-click="changeLanguage('en')" style="max-width: fit-content"><img src="img/flags/United-Kingdom.png" alt="" width="20px" height="50%"/></a>
+            <a class="dropdown-item" ng-class="{'active': currentLanguage == 'ar'}" href ng-click="changeLanguage('ar')" style="max-width: fit-content"><img src="img/flags/Saudi-Arabia.png" alt="" width="20px" height="50%"/></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+</nav>

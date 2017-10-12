@@ -1,0 +1,39 @@
+{
+  "index": {
+    "PAGETITLE": "Saituna Consulting Landing Page",
+    "NAME": "Saituna Consulting",
+    "SAMPLEDESC": "Sample Desc",
+    "FREE_CALL": "Kostenlose Telefonberatung",
+    "OUR_SERVICES": "Unsere Services",
+    "OTHERS_SERVICES": "Others Services",
+    "NAME_SERVICE1": "Fördermittel",
+    "NAME_SERVICE2": "Existenzgründung",
+    "NAME_SERVICE3": "Coaching",
+    "NAME_SERVICE4": "Businessplan",
+    "NAME_SERVICE5": "Buchhaltung",
+    "YOUR_ADVENTAGES": "Ihre Vorteile",
+    "TITLE_ADVENTAGE1": "Zeit für Ihre Fragen",
+    "TITLE_ADVENTAGE2": "Alle rechtlichen Themen",
+    "TITLE_ADVENTAGE3": "Klare Antworten vom Anwalt",
+    "TITLE_ADVENTAGE4": "Direkte Kommunikation ohne Termin in der Kanzlei",
+    "DESC_ADVENTAGE1": "Während eines 30-minütigen Telefonats können Sie Ihre Fragen zu Ihrer Gründung mit Ihrem Anwalt besprechen",
+    "DESC_ADVENTAGE2": "Ihr Anwalt beantwortet Ihnen Fragen zu allen rechtlichen Themen.Für eine steuerliche bzw. steuerrechtliche Beratung, die nicht inklusive ist, empfiehlt er Ihnen auf Wunsch einen Steuerberater.",
+    "DESC_ADVENTAGE3": "Sie können individuelle Fragen stellen und erhalten verbindliche Antworten.Ihr Anwalt berät Sie zu Ihrem Anliegen und gibt Ihnen klare Handlungsempfehlungen.",
+    "DESC_ADVENTAGE4": "Die Kommunikation mit Ihrem Anwalt erfolgt über unsere Plattform, per E-Mail oder über Telefon. Sie müssen keinen Vor-Ort-Termin in einer Kanzlei wahrnehmen.",
+    "CONTACT": {
+      "ADDRESS": "Ruhrallee 185",
+      "STREET": "45136 Essen"
+    },
+    "CAROUSEL" :{
+        "TITLE_SLIDE1": "",
+        "TITLE_SLIDE2": "",
+        "TITLE_SLIDE3": "",
+        "DESC_SLIDE1": "",
+        "DESC_SLIDE2": "",
+        "DESC_SLIDE3": "",
+        "PREV": "",
+        "NEXT": ""
+    },
+    "COPYRIGHT": "Copyright"
+  }
+}

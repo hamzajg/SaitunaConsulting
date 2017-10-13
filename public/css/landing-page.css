@@ -10,7 +10,7 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .intro-header {
-  height: 75%;
+  /*height: 75%; */
   text-align: center;
   color: #f8f8f8;
   background: url(../img/header_index.jpg) no-repeat round content-box;
@@ -181,4 +181,29 @@ footer {
 }
 p.copyright {
   margin: 15px 0 0;
+}
+
+.chosen-container-single .chosen-single {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 5px 0 0 8px;
+    height: 35px;
+    border: 1px solid #aaa;
+    border-radius: 0;
+    background-color: #fff;
+    background: none;
+    background: none;
+    background-clip: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    /* color: #444; */
+    /* text-decoration: none; */
+    /* white-space: nowrap; */
+    line-height: 24px;
+}
+.chosen-container-single .chosen-drop {
+  margin-top: -1px;
+  border-radius: 0;
+  background-clip: padding-box;
 }

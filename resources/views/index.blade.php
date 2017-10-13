@@ -22,14 +22,6 @@
         <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <style>
-            
-            li {
-                padding-bottom: 8px;
-            }
-
-        </style>
         <!-- Custom styles for this template -->
         <link href="css/landing-page.css" rel="stylesheet">
     </head>
@@ -37,12 +29,18 @@
     <body ng-cloak>
 
         <!-- Header -->
-        <header class="intro-header" ng-if="isIndexPage" style="max-height: 572px;">
+        <header class="intro-header" ng-if="isIndexPage"> <!--  style="max-height: 572px;" -->
         <div class="container">
-            <div class="intro-message pull-left">
-            <h1>Saituna Consulting</h1>
-            <h3>Landing Page</h3>
-            <hr class="intro-divider">
+            <div class="row">
+                <div class="intro-message pull-left">
+                    <h1>Saituna Consulting</h1>
+                    <h3>Landing Page</h3>
+                    <hr class="intro-divider">
+                </div>
+            </div>
+            
+            <div class="row text-dark" id="check">
+                <section style="margin-bottom: 15px" ng-include="'views/check.html'"></section>
             </div>
         </div>
         </header>

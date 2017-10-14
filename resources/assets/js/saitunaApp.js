@@ -41,9 +41,9 @@ var saitunaApp = angular.module('saitunaApp', [
 }])
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $routeProvider.when('/', {
-    				templateUrl : '/views/home.html'
+    				templateUrl : 'views/home.html'
     			}).when('/check', {
-    				templateUrl : '/views/ckeck.html'
+    				templateUrl : 'views/ckeck.html'
     			}).otherwise({
           redirectTo: '/'
         });

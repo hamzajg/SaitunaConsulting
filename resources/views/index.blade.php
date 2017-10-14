@@ -29,27 +29,43 @@
     <body ng-cloak>
 
         <!-- Header -->
-        <header class="intro-header" ng-if="isIndexPage"> <!--  style="max-height: 572px;" -->
-        <div class="container">
-            <div class="row">
-                <div class="intro-message pull-left">
-                    <h1>Saituna Consulting</h1>
-                    <h3>Landing Page</h3>
-                    <hr class="intro-divider">
+        <header class="intro-header" style="max-height: 500px">
+            <div class="container">
+                <div class="row">
+                    <div class="intro-message pull-left">
+                        <h1>Saituna Consulting</h1>
+                        <h3>Landing Page</h3>
+                        <hr class="intro-divider">
+                    </div>
+                </div>
+                
+                <div class="row text-dark" id="check">
+                    <section style="margin-bottom: 15px" ng-include="'views/check.html'"></section>
                 </div>
             </div>
-            
-            <div class="row text-dark" id="check">
-                <section style="margin-bottom: 15px" ng-include="'views/check.html'"></section>
-            </div>
-        </div>
         </header>
+        <!--  style="max-height: 572px;" -->
+        <!-- <header class="intro-header" ng-if="isIndexPage"> 
+            <div class="container">
+                <div class="row">
+                    <div class="intro-message pull-left">
+                        <h1>Saituna Consulting</h1>
+                        <h3>Landing Page</h3>
+                        <hr class="intro-divider">
+                    </div>
+                </div>
+                
+                <div class="row text-dark" id="check">
+                    <section style="margin-bottom: 15px" ng-include="'views/check.html'"></section>
+                </div>
+            </div>
+        </header> -->
         <!-- Application content -->
         <div id="controls">
             <aside ng-include="'views/nav.html'" id="sidebar"></aside>
         </div>
 
-        <div class="view-container" ui-view-container>
+        <div class="view-container" ui-view-container style="z-index: -1; position: relative;">
             <section ng-view id="content" autoscroll="false"></section>
         </div>
         <section ng-include="'views/footer.html'" id="footer"></section>

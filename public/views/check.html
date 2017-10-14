@@ -1,31 +1,128 @@
 <!-- Page Content -->
-<section class="content-section-a">
+<section class="content-section-aa">
 
   <div class="container">
     <div class="col-md-12">
+      <p class="">
+        <h5>Jetzt kostenlos und online Ihre Fördergelder berechnen.</h5>
+      </p>
       <div class="row">
-        <div class="col-md-3 col-sm-3">
-        <select chosen="{width: '100%'}">
-          <option></option>  
+        <div class="col-md-3 col-sm-3 text-left">
+        <select chosen="{width: '100%'}" data-placeholder="Ihre Stadt">
+          <option></option> 
           <option>ttttttt</option>  
           <option>ttttttt</option>  
           <option>ttttttt</option>  
         </select></div>
+        <div class="col-md-3 col-sm-3 text-left">
+        <select chosen="{width: '100%'}" multiple data-placeholder="Förderthemen">
+          <option>Existenzgründung</option>  
+          <option>Wachstum</option>  
+          <option>Aus- & Weiterbildung</option>
+          <option>Arbeit</option>
+          <option>Energie</option>
+          <option>Beratung</option>
+          <option>Außenwirtschaft</option>
+          <option>Forschung & Innovation</option>
+          <option>Umwelt</option>
+        </select></div>
         <div class="col-md-3 col-sm-3">
-        <select chosen="{width: '100%'}">
+          <div class="dropdown">
+            <button class="btn btn-default btn-block dropdown-toggle chosen-single" 
+            ng-click="show = !show" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ihr Geldbedarf
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" hidden>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        <!-- <select chosen="{width: '100%'}">
           <option></option>  
           <option>ttttttt</option>  
           <option>ttttttt</option>  
-          <option>ttttttt</option></select></div>
-        <div class="col-md-3 col-sm-3">
-        <select chosen="{width: '100%'}">
-          <option></option>  
-          <option>ttttttt</option>  
-          <option>ttttttt</option>  
-          <option>ttttttt</option></select></div>
+          <option>ttttttt</option></select> -->
+        </div>
         <div class="col-md-3 col-sm-3">
         <button class="btn btn-block btn-primary">Valide</button></div>
 
+      </div>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+      <hr class="intro-divider" ng-if="show">
+      <div class="row" ng-if="show"> 
+        <div class="col-md-6 text-left">
+          <div class="form-group">
+            <label>Grundstücke &amp; Gebäude</label> 
+            <input type="text" name="grounds" id="grounds" value="€" onkeyup="replaceChar(this);"> 
+          </div>
+          <div class="form-group">
+            <label>Fahrzeuge &amp; Maschinen</label>
+            <input type="text" name="vehicles" id="vehicles" value="€" onkeyup="replaceChar(this);"> 
+          </div>
+          <div class="form-group">
+            <label>Einrichtung &amp; Ausstattung</label>
+            <input type="text" name="equipment" id="equipment" value="€" onkeyup="replaceChar(this);"> 
+          </div>
+          <div class="form-group">
+            <label>Firmenbeteiligung &amp; Kauf</label> 
+            <input type="text" name="purchase" id="purchase" value="€" onkeyup="replaceChar(this);">  
+          </div>
+          <div class="form-group">
+            <label>Sonstige Investitionen</label> 
+            <input type="text" name="otherinvestments" id="otherinvestments" value="€" onkeyup="replaceChar(this);">
+          </div>
+          <div class="form-group">
+            <label>Liquidität &amp; Laufende Kosten</label> 
+            <input type="text" name="liquidity" id="liquidity" value="€" onkeyup="replaceChar(this);">
+          </div>
+          <div class="form-group">
+            <label>Umfinanzierung Dispo &amp; Kredite</label> 
+            <input type="text" name="loans" id="loans" value="€" onkeyup="replaceChar(this);">
+          </div>
+          <div class="inlineslide checkslide hidden">
+            <label>Handelt es sich um eine Existenzgründung?</label> 
+            <input type="checkbox" name="startb" id="startb" value="€" onkeyup="replaceChar(this);">
+          </div>   
+        </div>
+        <div class="col-md-6 text-left">
+
+          <div class="form-group">
+            <label>Marketing &amp; Messen</label>
+            <input type="text" name="marketingfairs" id="marketingfairs" value="€" onkeyup="replaceChar(this);">
+          </div>
+
+          <div class="form-group">
+            <label>Beratung &amp; Schulung</label> 
+            <input type="text" name="training" id="training" value="€" onkeyup="replaceChar(this);">
+          </div>
+
+          <div class="form-group">
+            <label>Anzahl neuer Azubis &amp; Praktikanten</label>
+            <input type="text" name="ewapprentices" id="ewapprentices" value="€" onkeyup="replaceChar(this);">
+          </div>
+          <div class="form-group">
+            <label>Anzahl neuer Mitarbeiter</label> 
+            <input type="text" name="nbemployees" id="nbemployees" onkeyup="replaceChar(this,false);">
+          </div>  
+          <div class="form-group">
+            <label>Patentrechte</label> 
+            <input type="text" name="patentrechte" id="patentrechte" value="€" onkeyup="replaceChar(this);">
+          </div>  
+          <div class="inlineslide checkslide hidden">
+          <label>Steht das Projekt i.V.m. Forschung &amp; Entwicklung?	</label> 
+          <input type="checkbox" name="ivmproject" id="ivmproject">
+        </div>    
+        <div class="inlineslide checkslide hidden">
+          <label>Steht das Projekt i.V.m. Energie &amp; Umweltschutz?</label> 
+          <input type="checkbox" name="ivmenergy" id="ivmenergy">
+        </div>
+      </div>
       </div>
   </div>
   </div>

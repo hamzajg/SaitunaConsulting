@@ -226,6 +226,10 @@ p.copyright {
   padding: 10px 0;
   background-color: #f8f8f8;
 }
+#dropdownMenuButton {
+    border-radius: unset;
+    border-color: rgb(170, 170, 170);
+}
 #dropdownMenuButton .dropdown-toggle::after {
     display: inline-block;
     width: 0;

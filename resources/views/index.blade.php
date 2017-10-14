@@ -40,7 +40,7 @@
                 </div>
                 
                 <div class="row text-dark" id="check">
-                    <section style="margin-bottom: 15px" ng-include="'views/check.html'"></section>
+                    <section style="margin-bottom: 15px; width: 100%" ng-include="'views/check.html'"></section>
                 </div>
             </div>
         </header>

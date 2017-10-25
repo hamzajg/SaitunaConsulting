@@ -23,5 +23,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .copy('resources/views/footer.html', 'public/views/')
     .copy('resources/views/home.html', 'public/views/')
     .copy('resources/views/check.html', 'public/views/')
+    .copy('resources/views/checkResult.html', 'public/views/')
     .copy('resources/views/services', 'public/views/services/')
    .sass('resources/assets/sass/app.scss', 'public/css');

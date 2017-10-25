@@ -21,6 +21,7 @@
         <!-- Custom fonts for this template -->
         <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <!-- Custom styles for this template -->
         <link href="css/landing-page.css" rel="stylesheet">
@@ -29,13 +30,13 @@
     <body ng-cloak>
 
         <!-- Header -->
-        <header class="intro-header" style="max-height: 500px">
+        <header class="intro-header" style="height: 640px" ng-if="isIndexPage">
             <div class="container">
                 <div class="row">
-                    <div class="intro-message pull-left">
-                        <h1>Saituna Consulting</h1>
-                        <h3>Landing Page</h3>
-                        <hr class="intro-divider">
+                    <div class="col-md-5 col-sm-10 intro-message pull-left text-left" style="background-color: rgba(250, 250, 250, 0.7);">
+                        <h2 style="color: #26526f; font-weight: 400; font-size: 40px">Individuelle Beratung für Gründer &amp; Unternehmen</h2>                        
+                        <p><span style="background-color: transparent; color: rgb(0, 47, 92); font-family: Lato;">Wir helfen Ihnen Ihre unternehmerischen Ziele zu erreichen.</span></p>
+                        <button class="btn btn-lg btn-primary" style="border-radius: 50px; background-color: rgba(21, 140, 228, 1) !important;">Jetzt kostenlos beraten lassen</button>
                     </div>
                 </div>
                 
@@ -91,8 +92,12 @@
         <script src="bower_components/angular-page-loader/dist/angular-page-loader.min.js"></script>
         <script src="bower_components/chosen/chosen.jquery.js"></script>
         <script src="bower_components/angular-chosen-localytics/dist/angular-chosen.min.js"></script>
+        <script src="bower_components/jquery.easy-pie-chart/dist/angular.easypiechart.min.js"></script>
+        <script src="bower_components/jquery.sparkline.bower/dist/jquery.sparkline.min.js"></script>
 
         <script type="text/javascript" src="js/saitunaApp.js"></script>
         <script type="text/javascript" src="js/controllers/main.js"></script>
+        <script type="text/javascript" src="js/directives/sparkline.js"></script>
+        <script type="text/javascript" src="js/controllers/chart.js"></script>
     </body>
 </html>

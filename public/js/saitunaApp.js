@@ -12,7 +12,7 @@ var saitunaApp = angular.module('saitunaApp', [
   'angular-loading-bar',
   'angular-page-loader',
   'ui.bootstrap',
-  //'easypiechart',
+  'easypiechart',
  'pascalprecht.translate',
 ])
 .run(function($timeout, $rootScope) {
@@ -44,6 +44,8 @@ var saitunaApp = angular.module('saitunaApp', [
     				templateUrl : 'views/home.html'
     			}).when('/check', {
     				templateUrl : 'views/ckeck.html'
+    			}).when('/checkResult', {
+    				templateUrl : 'views/checkResult.html'
     			}).otherwise({
           redirectTo: '/'
         });

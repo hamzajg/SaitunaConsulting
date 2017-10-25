@@ -6,6 +6,10 @@
 .navbar-light .navbar-toggler {
   border-color: transparent;
 }
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
 </style>
 <!-- Navigation -->
 <nav id="top" class="navbar fixed-top -fixed-top navbar-toggleable-sm navbar-inverse bg-inverse navbar-expand-lg navbar-light bg-light">
@@ -17,37 +21,36 @@
 
     </div>
     <span class="nav-link col-md-2 text-center" style="margin-top: -15px; margin-bottom: -15px;">
-      <small><table align="center"><tbody><tr><td rowspan="2"><i class="fa fa-phone fa-3x"></i></td><td class="text-left"><%'index.FREE_CALL' | translate%></td></tr><tr><td class="text-left">0800 / 989 8080</td></tr></tbody></table>
+      <small><table align="center"><tbody><tr><td rowspan="2">
+        <span class="fa-stack fa-lg text-primary">
+          <i class="fa fa-circle fa-stack-1x fa-2x"></i>
+          <i class="fa fa-phone fa-stack-1x fa-1x text-white"></i>
+        </span>
+      </td><td class="text-left"><%'index.FREE_CALL' | translate%></td></tr><tr><td class="text-left">0800 / 989 8080</td></tr></tbody></table>
       </small></span>
     <div class="navbar-collapse collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/#services" ng-if="!(currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting'))"><%'index.OUR_SERVICES' | translate%></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/#adventages" ng-if="!(currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting'))"><%'index.YOUR_ADVENTAGES' | translate%></a></h4>
-        </li>
-        <li class="nav-item dropdown" ng-if="currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting')">
-          <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Others
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Beratungsthemen
+            <span class="fa fa-angle-down"></span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <div class="dropdown-menu dropdown-menu-inverse" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="/funding"><%'index.NAME_SERVICE1' | translate%></a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/business_start"><%'index.NAME_SERVICE2' | translate%></a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/coaching"><%'index.NAME_SERVICE3' | translate%></a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/business_plan"><%'index.NAME_SERVICE4' | translate%></a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/accounting"><%'index.NAME_SERVICE5' | translate%></a>
           </div>
         </li>
-        <li class="nav-item" ng-if="currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting')">
-          <a class="nav-link" href="#">Forderchech</a>
-        </li>
-        <li class="nav-item" ng-if="currentPath.includes('/funding') || currentPath.includes('/business_start') || currentPath.includes('/coaching') || currentPath.includes('/business_plan') || currentPath.includes('/accounting')">
-          <a class="nav-link" href="#">Sprache</a>
-        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width: fit-content">
-            <img ng-src="img/flags/<%currentLanguage == 'en' ? 'United-Kingdom' : currentLanguage == 'de' ? 'Germany' : 'Saudi-Arabia'%>.png" class="img-thumbnail icon-small" alt="" width="30px" height="50%"/>
+          <a class="nav-link" href id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width: fit-content">
+            <img ng-src="img/flags/<%currentLanguage == 'en' ? 'United-Kingdom' : currentLanguage == 'de' ? 'Germany' : 'Saudi-Arabia'%>.png" class="img-thumbnail icon-small" alt="" width="30px" height="50%"/>          
+            <span class="fa fa-angle-down"></span>
           </a>
           <div class="dropdown-menu" style="min-width: unset" aria-labelledby="navbarDropdownMenuLink" style="max-width: fit-content">
             <a class="dropdown-item" ng-class="{'active': currentLanguage == 'de'}" href ng-click="changeLanguage('de')" style="max-width: fit-content"><img src="img/flags/Germany.png" alt="" width="20px" height="50%"/></a>

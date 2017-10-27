@@ -30,12 +30,12 @@
       </small></span>
     <div class="navbar-collapse collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown" ng-init="service.isopen = false" ng-mouseover="service.isopen = true" ng-mouseout="service.isopen = false">
+          <a class="nav-link" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Beratungsthemen
-            <span class="fa fa-angle-down"></span>
+            <span class="fa " ng-class="{'fa-angle-down': !service.isopen, 'fa-angle-up': service.isopen}"></span>
           </a>
-          <div class="dropdown-menu dropdown-menu-inverse" aria-labelledby="navbarDropdownMenuLink">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="/funding"><%'index.NAME_SERVICE1' | translate%></a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/business_start"><%'index.NAME_SERVICE2' | translate%></a>
@@ -47,10 +47,10 @@
             <a class="dropdown-item" href="/accounting"><%'index.NAME_SERVICE5' | translate%></a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" ng-init="flag.isopen = false" ng-mouseover="flag.isopen = true" ng-mouseout="flag.isopen = false">
           <a class="nav-link" href id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-width: fit-content">
             <img ng-src="img/flags/<%currentLanguage == 'en' ? 'United-Kingdom' : currentLanguage == 'de' ? 'Germany' : 'Saudi-Arabia'%>.png" class="img-thumbnail icon-small" alt="" width="30px" height="50%"/>          
-            <span class="fa fa-angle-down"></span>
+            <span class="fa " ng-class="{'fa-angle-down': !flag.isopen, 'fa-angle-up': flag.isopen}"></span>
           </a>
           <div class="dropdown-menu" style="min-width: unset" aria-labelledby="navbarDropdownMenuLink" style="max-width: fit-content">
             <a class="dropdown-item" ng-class="{'active': currentLanguage == 'de'}" href ng-click="changeLanguage('de')" style="max-width: fit-content"><img src="img/flags/Germany.png" alt="" width="20px" height="50%"/></a>

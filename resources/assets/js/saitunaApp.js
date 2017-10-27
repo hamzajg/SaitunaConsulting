@@ -12,7 +12,10 @@ var saitunaApp = angular.module('saitunaApp', [
   'angular-loading-bar',
   'angular-page-loader',
   'ui.bootstrap',
-  'easypiechart',
+  //'easypiechart',
+  //'angular-flot',
+  'chart.js',
+  //'angular.morris',
  'pascalprecht.translate',
 ])
 .run(function($timeout, $rootScope) {
@@ -22,6 +25,14 @@ var saitunaApp = angular.module('saitunaApp', [
     }, 3000)
 
 })
+.config(['ChartJsProvider', function (ChartJsProvider) {
+  // Configure all charts
+  ChartJsProvider.setOptions({
+    //animation: false,
+    //responsive: false
+  });
+
+}])
 .config(function ($interpolateProvider) {
 
     $interpolateProvider.startSymbol('<%');
@@ -42,6 +53,16 @@ var saitunaApp = angular.module('saitunaApp', [
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $routeProvider.when('/', {
     				templateUrl : 'views/home.html'
+    			}).when('/funding', {
+    				templateUrl : 'views/services/service1.html'
+    			}).when('/funding', {
+    				templateUrl : 'views/services/service1.html'
+    			}).when('/funding', {
+    				templateUrl : 'views/services/service1.html'
+    			}).when('/funding', {
+    				templateUrl : 'views/services/service1.html'
+    			}).when('/contact', {
+    				templateUrl : 'views/contact.html'
     			}).when('/check', {
     				templateUrl : 'views/ckeck.html'
     			}).when('/checkResult', {
@@ -49,5 +70,6 @@ var saitunaApp = angular.module('saitunaApp', [
     			}).otherwise({
           redirectTo: '/'
         });
-    $locationProvider.hashPrefix('');
+        // use the HTML5 History API
+        $locationProvider.html5Mode(true);
 }]);

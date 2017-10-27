@@ -6,5 +6,6 @@
     "/views/footer.html": "/views/footer.html",
     "/views/home.html": "/views/home.html",
     "/views/check.html": "/views/check.html",
-    "/views/checkResult.html": "/views/checkResult.html"
+    "/views/checkResult.html": "/views/checkResult.html",
+    "/views/contact.html": "/views/contact.html"
 }

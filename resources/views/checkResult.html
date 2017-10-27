@@ -1,19 +1,19 @@
 <!-- Page Content -->
 <div class="content-section-a"></div>
 <div class="content-section-a">
-    <section class="container" ng-controller="chartCtrl">
+    <section class="container" ng-controller="ChartCtrl">
 
     <div class="container">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-8">
-                    <div easypiechart options="options" percent="percent" hidden></div>
-                    <span sparkline data="pieChart.data" options="pieChart.options">
-                    </span>
+                <div class="card col-md-7 bg-white">
+                    <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" 
+                        chart-options="options" height="120" width="240" chart-colors="Color"></canvas>
                     <h4>Details</h4>
                     <p ng-repeat="v in pieChart.dataLabels">label: <%v.label%>, value: <%v.value%></p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-1"></div>
+                <div class="card col-md-4 bg-white">
                     <h4>Make a book appointment</h4>
                      <form>
                          <label>Choose Date: </label>
@@ -23,64 +23,19 @@
                                 <button type="button" class="btn btn-default" ng-click="opened = !opened"><i class="fa fa-calendar"></i></button>
                             </span>
                         </p>
+                        
                         <div class="form-group">
-                        <div class="row">
-                            <label for="fullName">Choose Hours</label>
-                        </div>
-                        <div class="row">
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                09:00 AM
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                10:00 AM
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                11:00 AM
-                            </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                12:00 PM
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                01:00 PM
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                02:00 PM
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                03:00 PM
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                04:00 PM
-                            </label>
-                            </div>
-                        </div>
-                            <!-- <div uib-timepicker ng-model="mytime" hour-step="hstep"
-                            minute-step="mstep" show-meridian="ismeridian"></div> -->
+                            <label>Choose Hours</label>
+                            <select class="form-control">
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="01:00 PM">01:00 PM</option>
+                                <option value="02:00 PM">02:00 PM</option>
+                                <option value="03:00 PM">03:00 PM</option>
+                                <option value="04:00 PM">04:00 PM</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="fullName">Full Name</label>
@@ -88,9 +43,13 @@
                             placeholder="Enter full name">
                         </div>
                         <div class="form-group">
+                            <label for="fullName">Phone</label>
+                            <input type="text" class="form-control" id="Phone"
+                            placeholder="Enter Phone Number">
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp" placeholder="Enter email"> <small id="emailHelp" class="form-text text-muted">We&apos;ll never share your email with anyone else.</small>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/> 
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Subject</label>

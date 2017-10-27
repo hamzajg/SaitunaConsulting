@@ -15,7 +15,7 @@
 
 </style>
 <!-- Page Content -->
-<section class="content">
+<section class="content" ng-controller="CheckCtrl">
 
   <div class="container">
     <uib-tabset active="active">
@@ -23,15 +23,12 @@
         <uib-tab-heading>
           Fördergelder
         </uib-tab-heading>
-        <div class="col-md-12 bg-white" style="padding: 10px">
+        <div class="container bg-white">
                 <h5>Jetzt kostenlos und online Ihre Fördergelder berechnen.</h5>
-              <div class="row">
+              <div class="row" style="padding: 10px">
                 <div class="col-md-3 col-sm-3 text-left">
-                <select chosen="{width: '100%'}" data-placeholder="Ihre Stadt">
-                  <option></option> 
-                  <option>ttttttt</option>  
-                  <option>ttttttt</option>  
-                  <option>ttttttt</option>  
+                <select chosen="{width: '100%'}" data-placeholder-text-single="'Ihre Stadt'" ng-model="city" ng-options="v.cities for v in citiesgermany">                  
+                   <option value=""></option>
                 </select></div>
                 <div class="col-md-3 col-sm-3 text-left">
                 <select chosen="{width: '100%'}" multiple data-placeholder="Förderthemen">
@@ -60,7 +57,7 @@
                   <option>ttttttt</option></select> -->
                 </div>
                 <div class="col-md-3 col-sm-3">
-                <a href="./#/checkResult" class="btn btn-block btn-primary">Berechnen</a></div>
+                <a href="checkResult" class="btn btn-block btn-primary">Berechnen</a></div>
 
               </div>
 
@@ -72,71 +69,95 @@
               <hr class="intro-divider" ng-if="show">
               <div class="row" ng-if="show"> 
                 <div class="col-md-6 text-left">
-                  <div class="form-group">
-                    <label>Grundstücke &amp; Gebäude</label> 
-                    <input type="text" name="grounds" id="grounds" value="€" onkeyup="replaceChar(this);"> 
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Grundstücke &amp; Gebäude: </label> 
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="">
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label>Fahrzeuge &amp; Maschinen</label>
-                    <input type="text" name="vehicles" id="vehicles" value="€" onkeyup="replaceChar(this);"> 
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Fahrzeuge &amp; Maschinen: </label>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="vehicles" id="vehicles" /> 
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label>Einrichtung &amp; Ausstattung</label>
-                    <input type="text" name="equipment" id="equipment" value="€" onkeyup="replaceChar(this);"> 
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Einrichtung &amp; Ausstattung: </label>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="equipment" id="equipment" /> 
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label>Firmenbeteiligung &amp; Kauf</label> 
-                    <input type="text" name="purchase" id="purchase" value="€" onkeyup="replaceChar(this);">  
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Firmenbeteiligung &amp; Kauf: </label> 
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="purchase" id="purchase" /> 
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label>Sonstige Investitionen</label> 
-                    <input type="text" name="otherinvestments" id="otherinvestments" value="€" onkeyup="replaceChar(this);">
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Sonstige Investitionen: </label> 
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="otherinvestments" id="otherinvestments" /> 
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label>Liquidität &amp; Laufende Kosten</label> 
-                    <input type="text" name="liquidity" id="liquidity" value="€" onkeyup="replaceChar(this);">
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Liquidität &amp; Laufende Kosten: </label> 
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="liquidity" id="liquidity" /> 
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label>Umfinanzierung Dispo &amp; Kredite</label> 
-                    <input type="text" name="loans" id="loans" value="€" onkeyup="replaceChar(this);">
-                  </div>
-                  <div class="inlineslide checkslide hidden">
-                    <label>Handelt es sich um eine Existenzgründung?</label> 
-                    <input type="checkbox" name="startb" id="startb" value="€" onkeyup="replaceChar(this);">
-                  </div>   
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Umfinanzierung Dispo &amp; Kredite: </label> 
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="loans" id="loans" /> 
+                    </div>
+                  </div>  
                 </div>
                 <div class="col-md-6 text-left">
 
-                  <div class="form-group">
-                    <label>Marketing &amp; Messen</label>
-                    <input type="text" name="marketingfairs" id="marketingfairs" value="€" onkeyup="replaceChar(this);">
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Marketing &amp; Messen: </label>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="marketingfairs" id="marketingfairs" /> 
+                    </div>
                   </div>
 
-                  <div class="form-group">
-                    <label>Beratung &amp; Schulung</label> 
-                    <input type="text" name="training" id="training" value="€" onkeyup="replaceChar(this);">
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Beratung &amp; Schulung: </label> 
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="training" id="training" /> 
+                    </div>
                   </div>
 
-                  <div class="form-group">
-                    <label>Anzahl neuer Azubis &amp; Praktikanten</label>
-                    <input type="text" name="ewapprentices" id="ewapprentices" value="€" onkeyup="replaceChar(this);">
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Anzahl neuer Azubis &amp; Praktikanten: </label>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="ewapprentices" id="ewapprentices" /> 
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label>Anzahl neuer Mitarbeiter</label> 
-                    <input type="text" name="nbemployees" id="nbemployees" onkeyup="replaceChar(this,false);">
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Anzahl neuer Mitarbeiter: </label> 
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="nbemployees" id="nbemployees" /> 
+                    </div>
                   </div>  
-                  <div class="form-group">
-                    <label>Patentrechte</label> 
-                    <input type="text" name="patentrechte" id="patentrechte" value="€" onkeyup="replaceChar(this);">
-                  </div>  
-                  <div class="inlineslide checkslide hidden">
-                  <label>Steht das Projekt i.V.m. Forschung &amp; Entwicklung?	</label> 
-                  <input type="checkbox" name="ivmproject" id="ivmproject">
-                </div>    
-                <div class="inlineslide checkslide hidden">
-                  <label>Steht das Projekt i.V.m. Energie &amp; Umweltschutz?</label> 
-                  <input type="checkbox" name="ivmenergy" id="ivmenergy">
-                </div>
+                  <div class="form-group form-inline">
+                    <label class="col-form-label">Patentrechte: </label> 
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div class="input-group-addon">€</div>
+                      <input type="text" class="form-control" placeholder="" ng-model="patentrechte" id="patentrechte" /> 
+                    </div>
+                  </div>                    
               </div>
               </div>
           </div>
@@ -146,11 +167,58 @@
         <uib-tab-heading>
           Book
         </uib-tab-heading>
-        <div class="bg-white">
-          I've got an HTML heading, and a select callback. Pretty cool!
-        </div>        
+        <div class="container bg-white text-left">
+          <div class="row" style="padding: 10px;">                      
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Choose Date &amp; Hours: </label>
+                <div class="form-inline">
+                  <span class="input-group">
+                      <input type="text" class="form-control ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required ng-valid-date" uib-datepicker-popup="" ng-model="dt" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" required="required">
+                      <div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty"><!-- ngIf: isOpen -->
+                    </div>
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="opened = !opened"><i class="fa fa-calendar"></i></button>
+                    </span>
+                  </span>
+
+                  <div class="form-group">
+                      <select class="form-control">
+                          <option value="09:00 AM">09:00 AM</option>
+                          <option value="10:00 AM">10:00 AM</option>
+                          <option value="11:00 AM">11:00 AM</option>
+                          <option value="12:00 PM">12:00 PM</option>
+                          <option value="01:00 PM">01:00 PM</option>
+                          <option value="02:00 PM">02:00 PM</option>
+                          <option value="03:00 PM">03:00 PM</option>
+                          <option value="04:00 PM">04:00 PM</option>
+                      </select>
+                  </div>
+                </div>
+              </div>
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Subject</label>
+              <textarea type="text" class="form-control" placeholder="Subject" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary pull-right">Submit</button>
+          </div>
+        </div>  
+      </div>              
       </uib-tab>
     </uib-tabset>
-    
   </div>
 </section>

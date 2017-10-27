@@ -1,27 +1,27 @@
 'use strict';
-saitunaApp.controller('chartCtrl', ['$scope', function ($scope) {
+/**
+ * @ngdoc function
+ * @name saitunaApp.controller:ChartCtrl
+ * @description
+ * # ChartCtrl
+ * Controller of the saitunaApp
+ */
+saitunaApp.controller('ChartCtrl', ['$scope', function ($scope) {
     console.log($scope);
     $scope.$parent.isIndexPage = false;
-        $scope.percent = 100;
-        $scope.options = {
-            animate:{
-                duration:0,
-                enabled:false
-            },
-            barColor:'#2C3E50',
-            scaleColor:false,
-            lineWidth:20,
-            lineCap:'circle'
-        };
-        $scope.pieChart = {
-          data: [5,10,20,15],
-          dataLabels:[{"label": "val1", "value": 5}, {"label": "val2", "value": 10},
-            {"label": "val3", "value": 20}, {"label": "val4", "value": 15}],
-          options: {
-            type: 'pie',
-            width: 'auto',
-            height: '350px',
-            sliceColors: ['#22beef','#a2d200','#ffc100','#ff4a43']
-          }
-        };
-    }]);
+    $scope.options = {
+        legend: {
+          display: true,
+          position: 'bottom'
+        },
+        responsive: true,
+        tooltipEvents: [],
+        showTooltips: true,
+        labels: true,
+        tooltipCaretSize: 0,
+    };
+    $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+    $scope.data = [300, 500, 100];
+
+    $scope.Color= ['#90EE90', '#FF6600', '#8080FF'];
+}]);

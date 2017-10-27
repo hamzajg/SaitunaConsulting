@@ -45,7 +45,7 @@
         <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><span class="fa fa-angle-up"></span></a>
 
         <!-- Header -->
-        <header class="intro-header" style="height: 640px" ng-if="isIndexPage">
+        <header ng-class="{'intro-header': !currentPath.includes('/funding'), 'intro-header-service-1': currentPath.includes('/funding')}" style="height:640px" ng-if="isIndexPage">
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 col-sm-10 intro-message pull-left text-left" style="background-color: rgba(250, 250, 250, 0.7);">
@@ -55,8 +55,8 @@
                     </div>
                 </div>
                 
-                <div class="row text-dark" id="check">
-                    <section style="margin-bottom: 15px; width: 100%" ng-include="'views/check.html'"></section>
+                <div class="row text-dark" id="check" ng-if="!currentPath.includes('/funding')">
+                    <section style="z-index: 1; margin-bottom: 15px; width: 100%" ng-include="'views/check.html'"></section>
                 </div>
             </div>
         </header>
@@ -81,7 +81,7 @@
             <aside ng-include="'views/nav.html'" id="sidebar"></aside>
         </div>
 
-        <div class="view-container" ui-view-container style="z-index: -1; position: relative;">
+        <div class="view-container" ui-view-container style="position: relative;">
             <section ng-view id="content" autoscroll="false"></section>
         </div>
         <section ng-include="'views/footer.html'" id="footer"></section>

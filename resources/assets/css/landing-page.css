@@ -16,6 +16,41 @@ body, h1, h2, h3, h4, h5, h6 {
   background: url(../img/header_index2.jpg) no-repeat bottom center;
   background-size: cover;
 }
+.intro-header-service-1 {
+  height: 100%;
+  text-align: center;
+  color: #f8f8f8;
+  background: url(../img/header_service_1.jpg) no-repeat center center;
+  background-size: cover;
+}
+.intro-header-service-2 {
+  height: 100%;
+  text-align: center;
+  color: #f8f8f8;
+  background: url(../img/header_service_2.jpg) no-repeat center center;
+  background-size: cover;
+}
+.intro-header-service-3 {
+  height: 100%;
+  text-align: center;
+  color: #f8f8f8;
+  background: url(../img/header_service_3.jpg) no-repeat center center;
+  background-size: cover;
+}
+.intro-header-service-4 {
+  height: 100%;
+  text-align: center;
+  color: #f8f8f8;
+  background: url(../img/header_service_4.jpg) no-repeat center center;
+  background-size: cover;
+}
+.intro-header-service-5 {
+  height: 100%;
+  text-align: center;
+  color: #f8f8f8;
+  background: url(../img/header_service_5.jpg) no-repeat center center;
+  background-size: cover;
+}
 
 @media (min-width: 300px) {
   .intro-header {
